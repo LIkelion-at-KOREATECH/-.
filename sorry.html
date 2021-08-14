@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>smile</title>
+  <link rel ="stylesheet" href="sorry.css">
+</head>
+<body>
+  
+  <div class ="position">
+    <div class="center">
+      <strong> 제목: 해커톤하면서 우리가 느낀 감정.. </strong>
+    </div>
+   <button type = "button" id ="upset" onclick="ChangeUpest()" >맞았다..</button>
+   <button type = "button" id = "sad"  onclick="ChangeSad()">또 맞았다...</button>
+   <button type = "button" id ="tired" onclick="ChangeHappy()">행복했다.</button>
+   <button type = "button" id ="die"  onclick="ChangeDie()">죽고싶어졌다..</button>
+
+   <div id="face">
+    <div class="eyes">
+        <div class="eye"></div>
+        <div class="eye"></div>
+    </div>
+</div>
+</div>
+
+<script>
+  document.querySelector("body").addEventListener("mousemove", eyeball);
+
+function eyeball() {
+  'use strict';
+  var eye = document.querySelectorAll(".eye");
+  eye.forEach(function (eye) {
+      let x = (eye.getBoundingClientRect().left) + (eye.clientWidth / 2)
+      let y = (eye.getBoundingClientRect().top) + (eye.clientHeight / 2);
+      let radian = Math.atan2(event.pageX - x, event.pageY - y);
+      let rot = (radian * (180 / Math.PI) * -1) + 270;
+      eye.style.transform  = "rotate("+ rot +"deg)"
+  })
+}
+
+</script>
+
+<script>
+  function ChangeUpest() {
+    let x = document.querySelector('#face');
+    x.style.backgroundColor="#EC431F";    
+    let y= document.querySelector('.eye');   
+    y.style.border= "5px solid";
+
+  }
+  function ChangeSad() {
+    let x = document.querySelector("#face").style.backgroundColor="blue";       
+      let y= document.querySelector('#eye');   
+    y.style.border= "5px solid";   
+  }
+  function ChangeHappy() {
+    let x = document.querySelector("#face").style.backgroundColor="#ffcd00"; 
+    let y= document.querySelector('.eye');   
+    y.style.border= "0px solid";         
+  }
+  function ChangeDie() {
+    let x = document.querySelector("#face").style.backgroundColor="black";     
+    let z= document.querySelector('#eye');   
+    z.style.border= "5px solid";
+    z.style.border ="blue";
+
+  }
+</script>
+</body>
+</html>
