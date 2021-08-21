@@ -1,0 +1,33 @@
+body{
+
+  font-size: 20px;
+color: white;
+  background-color: black;
+}
+a{
+  display: flex;
+  color:white;
+  justify-content: center;
+}
+.bol{
+  display: flex;
+  justify-content: center;
+}
+
+body{
+
+
+height: 1000px;
+}
+
+
+h1{
+  display: flex;
+  justify-content: center;
+
+}
+
+.img{
+  display: flex;
+  justify-content: center;
+}
